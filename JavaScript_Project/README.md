@@ -1,78 +1,73 @@
 # JavaScript Slot Machine Project
 
-# Overview
+## Overview
 
-This project is a command-line slot machine built with JavaScript. The game allows the player to deposit money, choose the number of lines to bet on, place a wager, spin the reels, and earn winnings based on matching symbols. The program includes input validation, balance tracking, payout calculations, and a replay loop to create a complete casino-style experience.
+This project is a command-line slot machine game built with JavaScript. It allows the player to deposit money, choose the number of lines to bet on, place a wager, spin the reels, and earn winnings based on matching symbols. The game includes input validation, balance tracking, payout calculations, and a replay loop to create a complete slot machine experience.
 
-The project was developed in a structured, step-by-step approach, beginning with the project setup and then progressing through the core gameplay logic. It includes the necessary dependency setup, slot configuration, reel generation, win evaluation, and final game flow.
+The project was developed in a structured, step-by-step process, beginning with the setup and continuing through the core game logic. It includes the necessary configuration, reel generation, symbol setup, payout logic, and final gameplay flow.
 
-# Project Goals
+## Project Purpose
 
-The main goal of this project was to recreate the mechanics of a slot machine in a simple JavaScript application. The game follows a realistic flow:
+The goal of this project was to recreate a slot machine in JavaScript while applying fundamental programming concepts such as variables, loops, conditionals, arrays, functions, and randomization. The result is a playable terminal-based game that simulates betting, spinning, and winning.
 
-- Deposit money into the game
-- Choose how many lines to play
-- Enter a bet amount per line
-- Spin the slot machine
-- Check for matching symbols
-- Calculate winnings
-- Update the player balance
-- Continue playing until the balance is empty or the player exits
-- Features
-- Secure and simple deposit validation
-- Line selection with a limited range
-- Bet validation based on the current balance
-- Randomized symbol generation for the reels
-- Row and column-based slot layout
-- Win detection for matching symbol patterns
-- Balance updates after each spin
-- Restart prompt after each round
-- Game loop that ends when the player runs out of money
-- Setup and Dependencies
-- The project includes the required package configuration and dependency setup needed to run the game successfully.
+## Features
 
-- JavaScript application logic is contained in the main project file
-- Package configuration was created to manage the project and dependencies
-- The project uses the prompt-sync package to collect user input in the terminal
-- A lock file was also generated to maintain a consistent dependency version for the project
-- Slot Configuration
-- The game includes the slot machine structure and payout settings:
+- Validates deposit amounts to ensure only positive numeric values are accepted
+- Allows the user to select the number of lines to bet on
+- Checks the bet amount against the player's available balance
+- Generates random symbols for each reel
+- Displays a 3x3 slot layout
+- Calculates winnings based on matching symbols across selected lines
+- Updates the balance after each turn
+- Prompts the user to continue playing after each round
+- Ends the game when the player runs out of money
 
-Rows: 3
-Columns: 3
-Symbol set: A, B, C, D
-Symbol counts and values were assigned to determine how often each symbol appears and how much it pays when matched
-This configuration is essential for establishing the reel probabilities and win values used throughout the game.
+## Project Setup
 
-Game Logic Summary
-The implementation includes several core functions that work together to create the full gameplay experience:
+This project includes the necessary package configuration and dependency setup required to run the game successfully. The application uses the `prompt-sync` package to collect terminal input, and the project lock file was created to maintain consistent dependency versions.
 
-deposit(): Prompts the player to enter a valid deposit amount and checks for invalid values
-getNumberOfLines(): Allows the player to choose between 1 and 3 lines
-getBet(): Validates the wager amount against the current balance and selected number of lines
-spin(): Generates a random set of symbols for each reel
-transpose(): Organizes the reel results into rows for display
-printRows(): Displays the slot rows in the terminal
-getWinnings(): Calculates payout based on matching symbols across the selected lines
-game(): Runs the main application flow, updates the balance, and asks if the player wants to continue
-Winning System
-The winnings are calculated by checking each active row to determine whether all symbols match. If a row contains the same symbol across the selected positions, the player receives a payout based on the symbol value and the current bet amount. The balance is then updated to reflect the result of the spin.
+## Slot Machine Configuration
 
-Player Experience
-The game keeps the player informed at each stage by presenting messages that show:
+The game is built around a standard slot machine setup:
 
-Current balance
-Deposit amount
-Number of lines selected
-Bet per line
-Spin results
-Winnings earned
-Whether the player has run out of money
-Whether they want to play again
-This creates an interactive and complete game loop that is easy to follow and play.
+- Rows: 3
+- Columns: 3
+- Symbols: A, B, C, D
+- Symbol counts and values were defined to determine reel probabilities and payout amounts
 
-Author
+## Core Game Logic
+
+The project is organized into several key functions:
+
+- `deposit()`: prompts the player for a valid deposit amount
+- `getNumberOfLines()`: validates how many lines the player wants to bet on
+- `getBet()`: checks that the wager is valid based on the current balance
+- `spin()`: randomly generates symbols for the reels
+- `transpose()`: rearranges reel data into rows for display
+- `printRows()`: prints the slot rows to the console
+- `getWinnings()`: calculates the payout for matching rows
+- `game()`: manages the main game flow and replay loop
+
+## How the Game Works
+
+1. The player deposits money.
+2. The player chooses how many lines to play.
+3. The player enters a bet amount per line.
+4. The slot machine spins and generates random symbols.
+5. The results are displayed in rows.
+6. Matching symbols determine whether the player wins.
+7. Winnings are added to the balance.
+8. The player is asked whether they want to continue.
+9. The game ends when the balance reaches zero or the player exits.
+
+## User Experience
+
+The game keeps the player informed throughout each round by displaying the current balance, selected number of lines, bet amount, spin results, and winnings. It also includes validation messages for invalid input, helping create a more interactive and user-friendly experience.
+
+## Author
+
 Matthew D. Mayer
 
-Conclusion
-This JavaScript slot machine project demonstrates a practical use of logic, loops, conditionals, randomization, and game-state management. It combines a clean game flow with input validation and reward logic to deliver a complete, playable slot machine experience in the terminal.
+## Conclusion
+
+This project demonstrates the practical application of JavaScript fundamentals in a real game environment. By combining logic, randomization, validation, and game flow, it creates a complete and playable slot machine experience in the terminal.
