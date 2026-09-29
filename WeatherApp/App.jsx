@@ -1,4 +1,4 @@
-import { Oval } from 'reace-loader-spinner';
+import { Oval } from 'react-loader-spinner';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -38,7 +38,7 @@ function GfGWeatherApp() {
             'Saturday',
         ];
         const currentDate = new Date();
-        const date = `${WeekDays[currentDate.getDay()]} ${currentDate.getDate()} ${months[currentDate.getMonth]}`;
+        const date = `${WeekDays[currentDate.getDay()]} ${currentDate.getDate()} ${months[currentDate.getMonth()]}`;
         return date;
     };
 
@@ -115,8 +115,7 @@ function GfGWeatherApp() {
                     <div className = "icon-temp">
                         <img
                             className = ""
-                            src = 'https://openweathermap.org/img/wn/$%7Bweather.data.weather%5B0%5D.icon%7D@2x.png%60%7D'
-                            alt = {weather.data.weather[0].description}
+                            src={`https://openweathermap.org/img/wn/${weather.data.weather[0].icon}@2x.png`}
                             />
                             { Math.round(weather.data.main.temp) }
                             <sup className = "deg"> °C </sup>
