@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<library>
+    <book id = "1" category = "fantasy">
+        <title>Lord of the Rings: The Fellowship of the Ring</title>
+        <author>J. R. R. Tolkien</author>
+    </book>
+    <book id = "2" category = "science fiction">
+        <title>Lord of the World</title>
+        <author>Robert Hugh Benson</author>
+    </book>
+</library>
+
+<bookstore>
+  <book category="fiction">
+    <title>Novel</title>
+  </book>
+  <book category="tech">
+    <title>JavaScript Guide</title>
+  </book>
+</bookstore>
+
+<!-- XPath Answers -->
+1. //book
+2. //book[@category = 'fiction']
+3. //title or //book/title
+
+<?xml version="1.0"?>
+<Books>
+  <book ID="1">
+    <Title>Learn XML</Title>
+    <author>John Doe</author>
+  </book>
+  <book>
+    <title>Master XPath</title>
+    <author>Jane Smith</author>
+  </book>
+<Books>
+
+<?xml version="1.0"?>
+<!DOCTYPE contacts [
+  <!ELEMENT contacts (contact+)>
+  <!ELEMENT contact (name, email?, phone*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT phone (#PCDATA)>
+]>
+<contacts>
+  <contact>
+    <name>John Doe</name>
+    <email>john@example.com</email>
+    <phone>555-1234</phone>
+    <phone>555-5678</phone>
+  </contact>
+</contacts>
